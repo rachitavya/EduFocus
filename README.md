@@ -1,4 +1,4 @@
-# EduHub
+# EduFocus
 
 ## Steps to use the website
 1. Create a python virtual environment:
