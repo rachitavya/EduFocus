@@ -7,6 +7,7 @@ from nltk.tokenize import word_tokenize
 from nltk.sentiment import SentimentIntensityAnalyzer
 from operator import itemgetter
 from .models import Video, Task
+from FlowState.settings import YOUTUBE_DATA_API_KEY
 
 def sentiment(text):
     sia = SentimentIntensityAnalyzer()
@@ -28,7 +29,7 @@ def search_task_data(string, taskId):
     search_params = {
         'part' : 'snippet',
         'q' : string,
-        'key' : 'AIzaSyA6PXcMFY4sXRae4-HVisjz31GUjSyQses',
+        'key' : YOUTUBE_DATA_API_KEY,
         'maxResults' : 15,
         'type' : 'video'
     }
@@ -40,7 +41,7 @@ def search_task_data(string, taskId):
         video_ids.append(result['id']['videoId'])
 
     video_params = {
-        'key' : 'AIzaSyA6PXcMFY4sXRae4-HVisjz31GUjSyQses',
+        'key' : YOUTUBE_DATA_API_KEY,
         'part' : 'snippet,contentDetails,statistics',
         'id' : ','.join(video_ids),
         'maxResults' : 15
@@ -53,7 +54,7 @@ def search_task_data(string, taskId):
     for video_id in video_ids:
         comments = []
         comment_params = {
-            'key' : 'AIzaSyA6PXcMFY4sXRae4-HVisjz31GUjSyQses',
+            'key' : YOUTUBE_DATA_API_KEY,
             'part' : 'snippet',
             'videoId' : video_id,
             'order': 'relevance'
