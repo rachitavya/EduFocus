@@ -1,2 +1,1 @@
-# FlowState
-Flow Forever!
+# EduHub

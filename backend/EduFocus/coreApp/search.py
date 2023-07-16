@@ -7,7 +7,7 @@ from nltk.tokenize import word_tokenize
 from nltk.sentiment import SentimentIntensityAnalyzer
 from operator import itemgetter
 from .models import Video, Task
-from FlowState.settings import YOUTUBE_DATA_API_KEY
+from EduFocus.settings import YOUTUBE_DATA_API_KEY
 
 def sentiment(text):
     sia = SentimentIntensityAnalyzer()
